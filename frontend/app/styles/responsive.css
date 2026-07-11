@@ -1,0 +1,114 @@
+@media (max-width: 980px) {
+  .appShell {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .rightPane {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .appShell {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .modalOverlay {
+    padding: 12px;
+  }
+
+  .roomEditGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .roomSettingsForm {
+    grid-template-columns: 1fr;
+  }
+
+  .homeColumn {
+    padding: 18px;
+  }
+
+  .homeActions {
+    grid-template-columns: 1fr;
+  }
+
+  .homeManagementHeader,
+  .homeManagementGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chatHeader {
+    grid-template-columns: 1fr auto;
+  }
+
+  .headerContextSearch {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+
+  .sidebar {
+    max-height: 190px;
+  }
+
+  .composer {
+    grid-template-columns: 1fr;
+    padding-inline: 12px;
+  }
+
+  .composerFooter {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .composerPrimaryActions {
+    flex: 1 1 auto;
+    justify-content: flex-end;
+  }
+
+  .composer.isFloating {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    max-height: calc(100vh - 24px);
+    transform: none;
+  }
+
+  .composer.isFloating .richEditorBody {
+    min-height: 240px;
+  }
+
+  .stampExplorer {
+    grid-template-columns: 1fr;
+  }
+
+  .stampExplorerSidebar {
+    grid-template-rows: auto auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stampExplorerFolders {
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(130px, 1fr);
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .fileFolderModal {
+    width: calc(100vw - 24px);
+    height: calc(100vh - 24px);
+  }
+
+  .fileFolderBody {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(140px, 34vh) 1fr;
+  }
+
+  .fileList {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}

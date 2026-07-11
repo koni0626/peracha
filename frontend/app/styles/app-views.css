@@ -1,0 +1,691 @@
+.appViewsPanel {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.appViewMenu {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  overflow-y: auto;
+  padding: 12px;
+  border-right: 1px solid var(--line);
+  background: #f4f8f9;
+}
+
+.appViewMenu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #314c56;
+  background: transparent;
+  text-align: left;
+  font-weight: 900;
+}
+
+.appViewMenu button.active {
+  border-color: var(--line);
+  color: var(--accent-dark);
+  background: #ffffff;
+}
+
+.appViewMain {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.appViewConfig {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(130px, 1fr));
+  gap: 8px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  background: #fbfdfd;
+}
+
+.appViewConfig label {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  color: #38535d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.appViewConfig select {
+  width: 100%;
+  min-width: 0;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 8px;
+  background: #ffffff;
+  font: inherit;
+}
+
+.appViewPreview {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+}
+
+.appViewPreview > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.appViewPreview > header > div:first-child {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+
+.appViewPreview h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.appViewPreview header span {
+  color: #6b7f87;
+  font-weight: 800;
+}
+
+.ganttModeSwitch {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px;
+  background: #ffffff;
+}
+
+.ganttModeSwitch button {
+  min-width: 42px;
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  color: #38535d;
+  background: transparent;
+  font-weight: 900;
+}
+
+.ganttModeSwitch button.active {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.appViewError {
+  margin: 0;
+  padding: 10px 14px;
+  color: #b42318;
+  background: #fff4f2;
+  border-bottom: 1px solid #ffd6d1;
+}
+
+.appViewEmpty {
+  margin: 0;
+  color: #6b7f87;
+  font-weight: 800;
+}
+
+.ganttView {
+  display: block;
+  min-width: 680px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: auto;
+  background: #ffffff;
+}
+
+.ganttGrid {
+  display: grid;
+  min-width: max-content;
+}
+
+.ganttTaskHeader,
+.ganttDateHeader {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #eef7f7;
+}
+
+.ganttTaskHeader,
+.ganttTaskCell {
+  position: sticky;
+  left: 0;
+  border-right: 1px solid var(--line);
+  background: inherit;
+}
+
+.ganttTaskHeader {
+  z-index: 4;
+  min-height: 44px;
+  padding: 9px 10px;
+  color: #2f4d57;
+  font-weight: 900;
+}
+
+.ganttTaskCell,
+.ganttUnitCell {
+  min-height: 48px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: #fbfdfd;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ganttTaskCell:hover,
+.ganttTaskCell:focus-visible,
+.ganttUnitCell:hover,
+.ganttUnitCell:focus-visible {
+  outline: 2px solid rgba(12, 148, 148, 0.28);
+  outline-offset: -2px;
+  background: #f1fbfb;
+}
+
+.ganttTaskCell {
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  padding: 7px 10px;
+}
+
+.ganttTaskCell strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ganttTaskCell span {
+  color: #6b7f87;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ganttDateHeader {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
+  border-left: 1px solid #dce8eb;
+  color: #38535d;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.ganttUnitCell {
+  border-left: 1px solid #dce8eb;
+  padding: 0;
+  background: #ffffff;
+}
+
+.ganttDateHeader.isToday,
+.ganttUnitCell.isToday {
+  background: #fff8d8;
+}
+
+.ganttBar {
+  --progress: 0%;
+  z-index: 2;
+  position: relative;
+  display: block;
+  align-self: center;
+  justify-self: stretch;
+  min-width: 28px;
+  height: 22px;
+  margin: 0 2px;
+  border: 1px solid rgba(17, 40, 46, 0.12);
+  border-radius: 999px;
+  padding: 0;
+  color: #ffffff;
+  font-size: 0;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  background: #e8f0f1;
+  box-shadow: 0 2px 6px rgba(17, 40, 46, 0.14);
+  cursor: pointer;
+  touch-action: none;
+}
+
+.ganttBar.isEditable {
+  cursor: ew-resize;
+}
+
+.ganttBarFill,
+.ganttBarRest {
+  position: absolute;
+  inset-block: 0;
+}
+
+.ganttBarFill {
+  left: 0;
+  width: var(--progress);
+}
+
+.ganttBarRest {
+  left: var(--progress);
+  width: calc(100% - var(--progress));
+}
+
+.ganttBarLabel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 0 8px;
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(17, 40, 46, 0.45);
+}
+
+.ganttBar.isOk .ganttBarFill {
+  background: #159447;
+}
+
+.ganttBar.isOk .ganttBarRest {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(21, 148, 71, 0.34) 0,
+      rgba(21, 148, 71, 0.34) 6px,
+      rgba(21, 148, 71, 0.12) 6px,
+      rgba(21, 148, 71, 0.12) 12px
+    );
+}
+
+.ganttBar.isLate {
+  animation: ganttLateBlink 2.4s ease-in-out infinite;
+}
+
+.ganttBar.isLate .ganttBarFill {
+  background: #c7342d;
+}
+
+.ganttBar.isLate .ganttBarRest {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(199, 52, 45, 0.38) 0,
+      rgba(199, 52, 45, 0.38) 6px,
+      rgba(199, 52, 45, 0.13) 6px,
+      rgba(199, 52, 45, 0.13) 12px
+    );
+}
+
+@keyframes ganttLateBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.48;
+  }
+}
+
+.kanbanView {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(220px, 280px);
+  gap: 12px;
+  min-height: 0;
+  overflow-x: auto;
+}
+
+.kanbanColumn {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 320px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: #f7fbfb;
+}
+
+.kanbanColumn.isDragOver {
+  border-color: var(--accent);
+  background: #eefafa;
+  box-shadow: inset 0 0 0 2px rgba(12, 148, 148, 0.18);
+}
+
+.kanbanColumn h3 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  color: #2f4d57;
+  font-size: 15px;
+}
+
+.kanbanColumn h3 span {
+  color: #6b7f87;
+}
+
+.kanbanCard {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px;
+  background: #ffffff;
+  font-weight: 800;
+  cursor: grab;
+  user-select: none;
+}
+
+.kanbanCard:active {
+  cursor: grabbing;
+}
+
+.kanbanCard:hover,
+.kanbanCard:focus-visible {
+  border-color: var(--accent);
+  box-shadow: 0 3px 10px rgba(17, 40, 46, 0.12);
+}
+
+.kanbanCard.isDragging {
+  opacity: 0.48;
+  outline: 2px dashed var(--accent);
+  outline-offset: -3px;
+}
+
+.calendarMonthView {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  min-width: 760px;
+  min-height: 0;
+}
+
+.calendarToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.calendarToolbar h3 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.calendarNav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendarNav button {
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 10px;
+  color: #38535d;
+  background: #ffffff;
+  font-weight: 900;
+}
+
+.calendarNav button:hover,
+.calendarNav button:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(104px, 1fr));
+  grid-auto-rows: minmax(104px, 1fr);
+  min-height: 640px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.calendarWeekday {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: #38535d;
+  background: #eef7f7;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.calendarCell {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 4px;
+  min-width: 0;
+  min-height: 104px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 6px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.calendarCell.isOutsideMonth {
+  background: #f7fbfb;
+}
+
+.calendarCell:hover,
+.calendarCell:focus-visible {
+  outline: 2px solid rgba(12, 148, 148, 0.24);
+  outline-offset: -2px;
+  background: #f4fbfb;
+}
+
+.calendarDateNumber {
+  display: grid;
+  place-items: center;
+  justify-self: start;
+  min-width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  color: #314c56;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.calendarCell.isOutsideMonth .calendarDateNumber {
+  color: #9aacb2;
+}
+
+.calendarCell.isToday .calendarDateNumber {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.calendarEvents {
+  display: grid;
+  align-content: start;
+  gap: 3px;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.calendarEvent {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  padding: 3px 6px;
+  color: #ffffff;
+  background: #168447;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.calendarEvent.isStart {
+  background: #168447;
+}
+
+.calendarEvent.isEnd {
+  background: #b8322a;
+}
+
+.calendarEvent:hover,
+.calendarEvent:focus-visible {
+  filter: brightness(0.88);
+}
+
+.calendarEventKind {
+  border-radius: 999px;
+  padding: 1px 5px;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.calendarEventTitle {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendarMore {
+  color: #38535d;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.appRecordEditorModal {
+  display: grid;
+  gap: 14px;
+  width: min(760px, calc(100vw - 40px));
+  max-height: min(780px, calc(100vh - 40px));
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 18px 48px rgba(17, 40, 46, 0.24);
+}
+
+.appRecordEditorModal header,
+.appRecordEditorModal footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.appRecordEditorModal header p {
+  margin: 0 0 4px;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.appRecordEditorModal h2 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.appRecordEditorModal header button {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 6px;
+  color: #38535d;
+  background: #eef5f6;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.appRecordEditorFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.appRecordEditorFields label {
+  display: grid;
+  gap: 6px;
+  color: #2f4d57;
+  font-weight: 900;
+}
+
+.appRecordEditorFields input,
+.appRecordEditorFields select,
+.appRecordEditorFields textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 10px;
+  background: #ffffff;
+  font: inherit;
+}
+
+.appRecordEditorFields textarea {
+  resize: vertical;
+}
+
+.appRecordEditorModal footer {
+  justify-content: flex-end;
+}
+
+.appRecordEditorModal footer button {
+  min-width: 104px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: #38535d;
+  background: #ffffff;
+  font-weight: 900;
+}
+
+.appRecordEditorModal footer button.primary {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.appRecordEditorModal footer button:disabled {
+  border-color: #9eb7bd;
+  background: #9eb7bd;
+}

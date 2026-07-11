@@ -1,0 +1,42 @@
+:root {
+  color-scheme: light;
+  --ink: #172026;
+  --muted: #60707b;
+  --line: #d7e0e5;
+  --soft: #f3f7f8;
+  --panel: #ffffff;
+  --nav: #20343d;
+  --nav-soft: #2b4651;
+  --accent: #0f8f8c;
+  --accent-dark: #0c6f70;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #e9f0f2;
+  font-family: Arial, "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+

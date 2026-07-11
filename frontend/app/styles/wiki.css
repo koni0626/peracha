@@ -1,0 +1,275 @@
+.wikiPanel {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: #fbfcfc;
+}
+
+.wikiArticleList {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+  overflow-y: auto;
+  padding: 14px 12px;
+  border-right: 1px solid var(--line);
+  background: #f5f8f8;
+}
+
+.wikiArticleListItem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+.wikiArticleListItem.active {
+  border-color: var(--line);
+  background: #ffffff;
+}
+
+.wikiArticleSelect,
+.wikiArticleIconButton {
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+}
+
+.wikiArticleSelect {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+  min-height: 34px;
+  padding: 7px 8px;
+  color: #314c56;
+  text-align: left;
+  font-weight: 800;
+}
+
+.wikiArticleSelect span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wikiArticleListItem.active .wikiArticleSelect {
+  color: var(--accent-dark);
+}
+
+.wikiArticleIconButton {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: #4d6871;
+  opacity: 0.55;
+}
+
+.wikiArticleIconButton.danger {
+  color: #b42318;
+}
+
+.wikiArticleListItem:hover .wikiArticleIconButton,
+.wikiArticleIconButton:focus-visible {
+  opacity: 1;
+  background: #eef5f6;
+}
+
+.wikiArticleIconButton.danger:hover,
+.wikiArticleIconButton.danger:focus-visible {
+  background: #fff4f2;
+}
+
+.wikiAddButton {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 38px;
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  color: var(--accent-dark);
+  background: #ffffff;
+}
+
+.wikiAddButton:hover,
+.wikiAddButton:focus-visible {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.wikiArticleMain {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0;
+  background: #ffffff;
+}
+
+.wikiError {
+  margin: 0 0 12px;
+  color: #b42318;
+  font-weight: 800;
+}
+
+.wikiEmpty,
+.wikiEmptyState p {
+  margin: 0;
+  color: #6b7f87;
+}
+
+.wikiEmptyState {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  max-width: 520px;
+  color: #486570;
+}
+
+.wikiEmptyState h2,
+.wikiArticleView h2 {
+  margin: 0;
+  color: #071a22;
+  letter-spacing: 0;
+}
+
+.wikiEmptyState button,
+.wikiEditorActions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0 14px;
+  color: #38535d;
+  background: #ffffff;
+  font-weight: 900;
+}
+
+.wikiEmptyState button,
+.wikiEditorActions button.primary {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.wikiEditor {
+  display: grid;
+  gap: 18px;
+  width: min(100%, 860px);
+  margin: 0 auto;
+  padding: clamp(28px, 5vw, 56px) clamp(22px, 5vw, 64px) 32px;
+}
+
+.wikiTitleInput {
+  width: 100%;
+  min-height: 64px;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  padding: 0 0 14px;
+  color: #071a22;
+  background: transparent;
+  font: inherit;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.wikiTitleInput:focus {
+  outline: none;
+  border-bottom-color: #e2ecee;
+}
+
+.wikiTitleInput::placeholder {
+  color: #b2c0c4;
+}
+
+.wikiEditor .markdownComposer {
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.wikiEditor .markdownToolbar {
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  gap: 2px;
+  margin: 0 0 10px;
+  padding: 6px 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+}
+
+.wikiEditor .markdownToolbar button {
+  width: 32px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+.wikiEditor .richEditorBody {
+  min-height: 520px;
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+  color: #162b33;
+  background: transparent;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.wikiEditor .richEditorSurface {
+  min-height: 520px;
+  max-height: none;
+}
+
+.wikiEditor .richEditorSurface:empty::before {
+  color: #9aabb0;
+}
+
+.wikiEditorActions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 18px 0 4px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), #ffffff 42%);
+}
+
+.wikiEditorActions button {
+  min-width: 92px;
+  border-radius: 999px;
+}
+
+.wikiEditorActions button:disabled {
+  border-color: #9eb7bd;
+  background: #9eb7bd;
+}
+
+.wikiAutoSaveStatus {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  color: #6b7f87;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.wikiArticleView {
+  display: grid;
+  gap: 16px;
+  max-width: 980px;
+}

@@ -1,0 +1,290 @@
+.memberList {
+  display: grid;
+  gap: 8px;
+}
+
+.memberList > div {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 86px 30px;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfdfd;
+}
+
+.memberList span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: #ffffff;
+  background: #47626d;
+  font-weight: 800;
+}
+
+.memberList strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.memberList small {
+  display: block;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.memberList select {
+  width: 100%;
+  min-height: 30px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--accent-dark);
+  background: #dff4f2;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.memberList button {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.memberList button:disabled {
+  cursor: not-allowed;
+  background: #9eb7bd;
+}
+
+.inviteForm {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.inviteForm input,
+.inviteForm select {
+  width: 100%;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.inviteForm button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.inviteForm button:disabled {
+  cursor: not-allowed;
+  background: #9eb7bd;
+}
+
+.userSearchForm {
+  margin-top: 10px;
+}
+
+.searchInputRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  gap: 8px;
+}
+
+.searchInputRow input {
+  width: 100%;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.searchInputRow button,
+.userSearchResults button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.searchInputRow button:disabled,
+.userSearchResults button:disabled {
+  cursor: not-allowed;
+  background: #9eb7bd;
+}
+
+.userSearchResults {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.userSearchResults > div {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfdfd;
+}
+
+.userSearchResults span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  color: #ffffff;
+  background: #47626d;
+  font-weight: 800;
+}
+
+.userSearchResults strong,
+.userSearchResults small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userSearchResults small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.inviteList {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.inviteList > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 30px;
+  gap: 4px 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfdfd;
+}
+
+.inviteList span {
+  align-self: start;
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  background: #dff4f2;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.inviteList strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.inviteList small {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.inviteList button {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.inviteList button:disabled,
+.inviteList > div.revoked button {
+  cursor: not-allowed;
+  background: #9eb7bd;
+}
+
+.inviteList > div.revoked span {
+  color: #6f7680;
+  background: #e5eaed;
+}
+
+.tokenBox {
+  display: grid;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 10px;
+  border: 1px dashed var(--accent);
+  border-radius: 6px;
+  background: #f4fbfb;
+}
+
+.tokenBox code {
+  overflow-wrap: anywhere;
+  color: var(--ink);
+  font-size: 12px;
+}
+
+.tokenBox a {
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tokenBox small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tokenBox button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 34px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 700;
+}
+

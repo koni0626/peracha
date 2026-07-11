@@ -1,0 +1,87 @@
+import { RoomEditModalSection, RoomFolderModalSection } from "./RoomModalSections";
+import type { RoomModalsProps } from "./roomModalsTypes";
+
+export function RoomModals({
+  activeRoom,
+  activeRoomId,
+  currentUserId,
+  filePreviewError,
+  filePreviewUrl,
+  files,
+  invitations,
+  inviteEmail,
+  inviteResult,
+  inviteRole,
+  roomEditName,
+  roomEditOpen,
+  roomFolderOpen,
+  roomMembers,
+  selectedFile,
+  userSearchLoading,
+  userSearchQuery,
+  userSearchResults,
+  onAddRegisteredUser,
+  onCloseFolder,
+  onCloseRoomEdit,
+  onCreateInvitation,
+  onLoadInvitations,
+  onLoadRoomMembers,
+  onPreviewLoadError,
+  onRefreshFiles,
+  onRemoveRoomMember,
+  onRevokeInvitation,
+  onSearchRegisteredUsers,
+  onSelectFile,
+  onUpdateRoomDetails,
+  onUpdateRoomMember,
+  setInviteEmail,
+  setInviteRole,
+  setRoomEditName,
+  setUserSearchQuery,
+}: RoomModalsProps) {
+  return (
+    <>
+      <RoomEditModalSection
+        activeRoom={activeRoom}
+        activeRoomId={activeRoomId}
+        currentUserId={currentUserId}
+        invitations={invitations}
+        inviteEmail={inviteEmail}
+        inviteResult={inviteResult}
+        inviteRole={inviteRole}
+        roomEditName={roomEditName}
+        roomEditOpen={roomEditOpen}
+        roomMembers={roomMembers}
+        userSearchLoading={userSearchLoading}
+        userSearchQuery={userSearchQuery}
+        userSearchResults={userSearchResults}
+        onAddRegisteredUser={onAddRegisteredUser}
+        onCloseRoomEdit={onCloseRoomEdit}
+        onCreateInvitation={onCreateInvitation}
+        onLoadInvitations={onLoadInvitations}
+        onLoadRoomMembers={onLoadRoomMembers}
+        onRemoveRoomMember={onRemoveRoomMember}
+        onRevokeInvitation={onRevokeInvitation}
+        onSearchRegisteredUsers={onSearchRegisteredUsers}
+        onUpdateRoomDetails={onUpdateRoomDetails}
+        onUpdateRoomMember={onUpdateRoomMember}
+        setInviteEmail={setInviteEmail}
+        setInviteRole={setInviteRole}
+        setRoomEditName={setRoomEditName}
+        setUserSearchQuery={setUserSearchQuery}
+      />
+      <RoomFolderModalSection
+        activeRoom={activeRoom}
+        filePreviewError={filePreviewError}
+        filePreviewUrl={filePreviewUrl}
+        files={files}
+        roomFolderOpen={roomFolderOpen}
+        selectedFile={selectedFile}
+        onCloseFolder={onCloseFolder}
+        onPreviewLoadError={onPreviewLoadError}
+        onRefreshFiles={onRefreshFiles}
+        onSelectFile={onSelectFile}
+      />
+    </>
+  );
+}

@@ -1,0 +1,327 @@
+.appShell {
+  width: 111.111111vw;
+  height: 111.111111dvh;
+  display: grid;
+  grid-template-columns: 260px minmax(420px, 1fr);
+  min-height: 0;
+  overflow: hidden;
+  zoom: 0.9;
+}
+
+.appShell.homeMode {
+  grid-template-columns: 260px minmax(0, 1fr);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 0;
+  overflow: hidden;
+  padding: 18px;
+  color: #eef7f7;
+  background: var(--nav);
+}
+
+.brandBlock {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandMark,
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.brandMark {
+  color: var(--nav);
+  background: #b8efec;
+  overflow: hidden;
+}
+
+.brandMark img,
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brandBlock small {
+  display: block;
+  color: #a8c0c7;
+  margin-top: 3px;
+}
+
+.avatarUploadButton,
+.logoutButton,
+.notificationButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 34px;
+  border: 1px solid rgba(188, 208, 214, 0.35);
+  border-radius: 6px;
+  color: #e7f2f4;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.avatarUploadButton input {
+  display: none;
+}
+
+.avatarUploadButton {
+  margin-top: -10px;
+  cursor: pointer;
+}
+
+.avatarUploadButton:hover,
+.logoutButton:hover,
+.notificationButton:hover {
+  background: var(--nav-soft);
+}
+
+.notificationButton {
+  margin-top: -12px;
+}
+
+.sideSection {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.sideHeader {
+  color: #bcd0d6;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.roomList {
+  display: grid;
+  gap: 4px;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.roomButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 6px;
+  color: #e7f2f4;
+  background: transparent;
+  text-align: left;
+}
+
+.roomButton svg {
+  flex: 0 0 auto;
+}
+
+.roomButtonText {
+  display: grid;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: 2px;
+}
+
+.roomButtonText strong,
+.roomButtonText small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.roomButtonText strong {
+  color: #e7f2f4;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.roomButtonText .roomNameLine {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.roomNameText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.roomButtonText small {
+  color: #a8c0c7;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.roomButton.active,
+.roomButton:hover {
+  background: var(--nav-soft);
+}
+
+.roomAddButton {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 38px;
+  margin-top: 8px;
+  border: 1px dashed rgba(188, 208, 214, 0.45);
+  border-radius: 6px;
+  color: #d9edf1;
+  background: transparent;
+}
+
+.roomAddButton:hover,
+.roomAddButton:focus-visible {
+  border-color: rgba(217, 237, 241, 0.8);
+  background: var(--nav-soft);
+}
+
+.roomCreateForm {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+  border: 1px solid rgba(188, 208, 214, 0.22);
+  border-radius: 6px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.roomCreateForm input {
+  width: 100%;
+  height: 36px;
+  border: 1px solid rgba(188, 208, 214, 0.35);
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #102b34;
+  background: #ffffff;
+  font: inherit;
+}
+
+.roomCreateForm > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 38px;
+  gap: 6px;
+}
+
+.roomCreateForm button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 34px;
+  border: 1px solid rgba(188, 208, 214, 0.3);
+  border-radius: 5px;
+  color: #e7f2f4;
+  background: transparent;
+  font-weight: 900;
+}
+
+.roomCreateForm button[type="submit"] {
+  border-color: var(--accent);
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.roomCreateForm button:disabled {
+  opacity: 0.45;
+}
+
+.unreadBadge,
+.mentionBadge {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.unreadBadge {
+  background: #47626d;
+}
+
+.roomUnreadBadge {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  font-size: 11px;
+}
+
+.mentionBadge {
+  background: var(--danger);
+}
+
+.roomContextMenu {
+  position: fixed;
+  z-index: 30;
+  min-width: 176px;
+  padding: 6px;
+  border: 1px solid rgba(32, 52, 61, 0.16);
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 14px 32px rgba(32, 52, 61, 0.18);
+}
+
+.roomContextMenu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 5px;
+  color: var(--ink);
+  background: transparent;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.roomContextMenu button:hover {
+  background: var(--soft);
+}
+
+.roomContextMenu button.dangerMenuItem {
+  color: var(--danger);
+}
+
+.roomContextMenu button.dangerMenuItem:hover {
+  background: #fff1f0;
+}
+
+.composer button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+}

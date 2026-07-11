@@ -1,0 +1,25 @@
+.venv/
+.idea/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+*.log
+*.tsbuildinfo
+# Environment files / local secrets
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+node_modules/
+.next/
+dist/
+build/
+uploads/
+backend/uploads/
+frontend/*.png

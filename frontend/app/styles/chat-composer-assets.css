@@ -1,0 +1,123 @@
+.stampPickerModal {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  width: min(720px, calc(100vw - 32px));
+  max-height: min(720px, calc(100vh - 32px));
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(23, 32, 38, 0.24);
+}
+
+.stampPickerModal > header,
+.stampPickerModal > footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.stampPickerModal h2 {
+  margin: 2px 0 0;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+.stampPickerModal > footer span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.stampPickerModal > footer button {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 800;
+}
+
+.pendingAttachments button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.pendingAttachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pendingAttachments span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 260px;
+  padding: 4px 5px 4px 8px;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  background: #dff4f2;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pendingAttachments .pendingImageAttachment {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 24px;
+  gap: 8px;
+  width: min(260px, 100%);
+  max-width: min(260px, 100%);
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.pendingAttachments .pendingVideoAttachment {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr) 24px;
+  gap: 8px;
+  width: min(320px, 100%);
+  max-width: min(320px, 100%);
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.pendingImageAttachment img {
+  width: 52px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #e8eef0;
+}
+
+.pendingVideoAttachment video {
+  width: 90px;
+  height: 52px;
+  border-radius: 6px;
+  background: #111c21;
+}
+
+.pendingImageAttachment span,
+.pendingVideoAttachment span {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.pendingAttachments button {
+  width: 20px;
+  height: 20px;
+}

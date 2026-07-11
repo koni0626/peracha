@@ -1,0 +1,214 @@
+.homeColumn {
+  display: grid;
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 32px;
+  background: #ffffff;
+}
+
+.homePanel {
+  display: grid;
+  align-content: start;
+  gap: 24px;
+  width: min(1160px, 100%);
+}
+
+.homePanel h1 {
+  margin: 6px 0 8px;
+  font-size: 28px;
+  letter-spacing: 0;
+}
+
+.homePanel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.homeActions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.homeActionCard {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfd;
+}
+
+.homeActionCard h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.homeActionCard input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.homeActionCard textarea {
+  width: 100%;
+  min-height: 92px;
+  resize: vertical;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  background: #ffffff;
+  font: inherit;
+  line-height: 1.55;
+}
+
+.homeActionCard button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.homeActionCard button:disabled {
+  cursor: not-allowed;
+  background: #9eb7bd;
+}
+
+.homeActionCard select {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.homeManagementCard {
+  gap: 18px;
+}
+
+.homeManagementHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 280px);
+  gap: 16px;
+  align-items: end;
+}
+
+.homeManagementHeader h2 {
+  margin: 2px 0 6px;
+}
+
+.homeManagementGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+}
+
+.homeEmbeddedPanel {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.profileCard {
+  position: relative;
+  grid-template-rows: auto auto 40px;
+}
+
+.profileCard.isDragActive {
+  border-color: var(--accent);
+  background: #eefafa;
+  box-shadow: inset 0 0 0 2px rgba(11, 148, 148, 0.16);
+}
+
+.profilePreview {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.profilePreview strong,
+.profilePreview small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profilePreview small {
+  margin-top: 3px;
+  color: var(--muted);
+}
+
+.profileAvatar {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  color: #38535d;
+  background: transparent;
+}
+
+.profileAvatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.homeUploadButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.homeUploadButton.secondary {
+  color: #38535d;
+  background: #ffffff;
+}
+
+.homeUploadButton input {
+  display: none;
+}
+
+@media (max-width: 980px) {
+  .homeActions,
+  .homeManagementGrid {
+    grid-template-columns: 1fr;
+  }
+}

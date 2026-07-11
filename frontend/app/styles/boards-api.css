@@ -1,0 +1,270 @@
+.boardSuggestion {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: #f4fbfb;
+}
+
+.boardSuggestion strong {
+  color: var(--accent-dark);
+  font-size: 13px;
+}
+
+.boardSuggestion p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.boardSuggestion button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 34px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.apiCreateForm {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.apiCreateForm button,
+.apiAuditHeader button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--accent);
+  font-weight: 700;
+}
+
+.apiCreateForm button:disabled,
+.apiAuditHeader button:disabled {
+  cursor: not-allowed;
+  background: #9eb7bd;
+}
+
+.apiClientList {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.apiClientList button {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3px 8px;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  text-align: left;
+}
+
+.apiClientList button.active {
+  border-color: var(--accent);
+  background: #f4fbfb;
+}
+
+.apiClientList span,
+.apiClientList small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.apiClientList strong {
+  grid-column: 1 / -1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.apiTokenPanel {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.apiTokenList {
+  display: grid;
+  gap: 7px;
+}
+
+.apiTokenList div {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  gap: 2px 8px;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfdfd;
+}
+
+.apiTokenList div.revoked {
+  opacity: 0.62;
+}
+
+.apiTokenList span {
+  font-weight: 700;
+}
+
+.apiTokenList small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.apiTokenList button {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 6px;
+  color: #ffffff;
+  background: var(--danger);
+}
+
+.apiTokenList button:disabled {
+  cursor: not-allowed;
+  background: #9eb7bd;
+}
+
+.apiAuditHeader {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.apiAuditHeader small {
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.auditList {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.auditList div {
+  display: grid;
+  gap: 2px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fbfdfd;
+}
+
+.auditList small,
+.auditList time {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.boardPreview {
+  display: grid;
+  gap: 8px;
+}
+
+.boardPreview img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.boardPreview small,
+.mutedText {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mutedText {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.historyList {
+  display: grid;
+  gap: 8px;
+}
+
+.historyList button {
+  display: grid;
+  grid-template-columns: 1fr 42px;
+  gap: 3px 8px;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  text-align: left;
+}
+
+.historyList span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.historyList strong {
+  grid-row: span 2;
+  align-self: center;
+  justify-self: end;
+  color: var(--accent-dark);
+  font-size: 22px;
+}
+
+.historyList small {
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.errorText,
+.footerError,
+.footerNotice {
+  color: var(--danger);
+  line-height: 1.5;
+}
+
+.footerNotice {
+  margin: 0;
+  padding: 0 20px 12px;
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.footerError {
+  margin: 0;
+  padding: 0 20px 14px;
+  font-size: 13px;
+}
+

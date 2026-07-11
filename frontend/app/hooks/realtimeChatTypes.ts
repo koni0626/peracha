@@ -1,0 +1,25 @@
+import type { Dispatch, RefObject, SetStateAction } from "react";
+
+import type { Board, BoardSuggestion, CareIntervention, Diagnosis, Room, Task, User } from "../types";
+
+export type UseRealtimeChatOptions = {
+  activeRoomId: string | null;
+  activeRoomIdRef: RefObject<string | null>;
+  rooms: Room[];
+  roomsRef: RefObject<Room[]>;
+  user: User | null;
+  setActiveRoomId: Dispatch<SetStateAction<string | null>>;
+  setRooms: Dispatch<SetStateAction<Room[]>>;
+  setTasks: Dispatch<SetStateAction<Task[]>>;
+  setLatestDiagnosis: Dispatch<SetStateAction<Diagnosis | null>>;
+  setDiagnosisHistory: Dispatch<SetStateAction<Diagnosis[]>>;
+  setLatestCare: Dispatch<SetStateAction<CareIntervention | null>>;
+  setCareHistory: Dispatch<SetStateAction<CareIntervention[]>>;
+  setLatestBoard: Dispatch<SetStateAction<Board | null>>;
+  setBoardSuggestion: Dispatch<SetStateAction<BoardSuggestion | null>>;
+  setChatNotice: Dispatch<SetStateAction<string | null>>;
+  setError: Dispatch<SetStateAction<string | null>>;
+  resetAccessState: () => void;
+  loadRoomMembers: (roomId?: string | null) => Promise<void>;
+  loadInvitations: (roomId?: string | null, showError?: boolean) => Promise<void>;
+};

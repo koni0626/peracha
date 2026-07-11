@@ -1,0 +1,44 @@
+import type { Dispatch, MouseEvent, ReactNode, SetStateAction } from "react";
+
+import type { WorkTable, WorkTableColumn, WorkTableRecord } from "../types";
+import type { ColumnContextMenuState, FilterMenuState, RecordContextMenuState, WorkTableSortState } from "./workTablePanelTypes";
+
+export type WorkTableGridProps = {
+  activeRecords: WorkTableRecord[];
+  activeTable: WorkTable;
+  canReorderRecords: boolean;
+  columnContextMenu: ColumnContextMenuState | null;
+  columnFilters: Record<string, string[]>;
+  draggedColumnId: string | null;
+  draggedRecordId: string | null;
+  expandedHistoryRecordIds: string[];
+  filteredRecords: WorkTableRecord[];
+  openFilterMenu: FilterMenuState | null;
+  recordContextMenu: RecordContextMenuState | null;
+  saving: boolean;
+  sortState: WorkTableSortState;
+  activeFilterCount: (columnId: string) => number;
+  dropColumn: (columnId: string) => void | Promise<void>;
+  dropRecord: (recordId: string) => void | Promise<void>;
+  formatHistoryTime: (value: string) => string;
+  insertRecordAt: (insertPosition: number) => void | Promise<void>;
+  insertRecordNear: (record: WorkTableRecord, side: "above" | "below") => void | Promise<void>;
+  openColumnContextMenu: (event: MouseEvent, column: WorkTableColumn) => void;
+  openColumnCreator: (column: WorkTableColumn, side: "left" | "right") => void;
+  openColumnEditor: (column: WorkTableColumn) => void;
+  openEmptyRecordContextMenu: (event: MouseEvent) => void;
+  openRecordContextMenu: (event: MouseEvent, record: WorkTableRecord) => void;
+  recordHistories: (recordId: string) => WorkTableRecord[];
+  removeColumn: (column: WorkTableColumn) => void | Promise<void>;
+  renderCell: (record: WorkTableRecord, column: WorkTableColumn) => ReactNode;
+  renderReadonlyCell: (record: WorkTableRecord, column: WorkTableColumn) => ReactNode;
+  setColumnFilters: Dispatch<SetStateAction<Record<string, string[]>>>;
+  setDraggedColumnId: (columnId: string | null) => void;
+  setDraggedRecordId: (recordId: string | null) => void;
+  setOpenFilterMenu: (menu: FilterMenuState | null) => void;
+  toggleFilterMenu: (columnId: string, button: HTMLButtonElement) => void;
+  toggleFilterValue: (columnId: string, value: string) => void;
+  toggleRecordHistories: (record: WorkTableRecord, histories: WorkTableRecord[]) => void;
+  toggleSort: (columnId: string) => void;
+  uniqueColumnValues: (column: WorkTableColumn) => string[];
+};

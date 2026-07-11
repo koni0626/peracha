@@ -1,0 +1,42 @@
+import type { FormEvent } from "react";
+
+import type { Invitation, Room, RoomFile, RoomMember, User } from "../types";
+
+export type RoomModalsProps = {
+  activeRoom: Room | null;
+  activeRoomId: string | null;
+  currentUserId: string;
+  filePreviewError: string | null;
+  filePreviewUrl: string | null;
+  files: RoomFile[];
+  invitations: Invitation[];
+  inviteEmail: string;
+  inviteResult: Invitation | null;
+  inviteRole: string;
+  roomEditName: string;
+  roomEditOpen: boolean;
+  roomFolderOpen: boolean;
+  roomMembers: RoomMember[];
+  selectedFile: RoomFile | null;
+  userSearchLoading: boolean;
+  userSearchQuery: string;
+  userSearchResults: User[];
+  onAddRegisteredUser: (candidate: User) => void | Promise<void>;
+  onCloseFolder: () => void;
+  onCloseRoomEdit: () => void;
+  onCreateInvitation: (event: FormEvent<HTMLFormElement>) => void | Promise<void>;
+  onLoadInvitations: () => void | Promise<void>;
+  onLoadRoomMembers: () => void | Promise<void>;
+  onPreviewLoadError: (message: string) => void;
+  onRefreshFiles: () => void | Promise<void>;
+  onRemoveRoomMember: (memberId: string) => void | Promise<void>;
+  onRevokeInvitation: (invitationId: string) => void | Promise<void>;
+  onSearchRegisteredUsers: (event?: FormEvent<HTMLFormElement>) => void | Promise<void>;
+  onSelectFile: (file: RoomFile) => void;
+  onUpdateRoomDetails: (event: FormEvent<HTMLFormElement>) => void | Promise<void>;
+  onUpdateRoomMember: (memberId: string, role: string) => void | Promise<void>;
+  setInviteEmail: (value: string) => void;
+  setInviteRole: (value: string) => void;
+  setRoomEditName: (value: string) => void;
+  setUserSearchQuery: (value: string) => void;
+};
